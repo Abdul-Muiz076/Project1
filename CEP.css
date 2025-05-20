@@ -1,0 +1,449 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* HEADER SECTION */
+header {
+    background-color: #000;
+    padding: 20px 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo p {
+    color: #a38266;
+    font-size: 12px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a38266;
+}
+
+.header-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 1;
+    max-width: 50%;
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-content h3 {
+    font-size: 28px;
+    color: #a38266;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #a38266;
+    color: #a38266;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #a38266;
+    color: #fff;
+}
+/* SPECIAL QUOTE SECTION */
+.quote-section {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    font-family: 'Times New Roman', serif;
+    overflow: hidden;
+}
+
+.quote-container h2 {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    color: #a38266; /* Golden color for emphasis */
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden; /* Hide text until animation */
+    border-right: 2px solid #a38266; /* Simulates a cursor */
+    animation: typing 5s steps(60, end), blink-cursor 0.7s step-end infinite;
+}
+
+.quote-container p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #ddd;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 5s forwards; /* Fades in after typing completes */
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+
+
+/* Fade-In Animation for Author Name */
+@keyframes fadeIn {
+    to { opacity: 90; }
+}
+
+/* GENERAL SECTION STYLES */
+.feature-section {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.feature-container {
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+    width: 100%;
+    gap: 30px;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Faster animation */
+}
+
+/* IMAGE CONTAINER */
+.feature-image img {
+    width: 100%;
+    max-width: 800px; /* Increased max width for images */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures images fit perfectly */
+    transition: transform 0.4s ease-in-out;
+}
+
+.feature-image img:hover {
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+/* TEXT CONTAINER */
+.feature-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.feature-text h2 {
+    font-size: 38px; /* Slightly larger for emphasis */
+    color: #a38266; /* Gold-like accent */
+    margin-bottom: 10px;
+}
+
+.feature-text h3 {
+    font-size: 24px; /* Larger subheading */
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.feature-text p {
+    font-size: 18px; /* Larger font for readability */
+    color: #bbb;
+    line-height: 1.8;
+}
+
+/* BUTTON STYLING */
+.feature-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #a38266; /* Golden button */
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    text-decoration: none; /* Ensure it's styled as a button */
+}
+
+.feature-text .btn:hover {
+    background-color: #fff;
+    color: #a38266; /* Invert colors on hover */
+}
+
+/* ALTERNATING SECTION ALIGNMENT */
+.feature-right {
+    flex-direction: row;
+}
+
+.feature-left {
+    flex-direction: row-reverse;
+}
+
+/* ANIMATED FADE-IN FROM LEFT AND RIGHT */
+.feature-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Brand Story Section */
+.brand-story {
+    background-color: #1c1c1c; /* Dark background */
+    color:  #a38266; /* Golden text */
+    padding: 50px 20px;
+}
+
+.brand-story-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.brand-story-content {
+    flex: 1 1 50%;
+    padding: 20px;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.brand-story-content h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.brand-story-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #fff; /* White text for readability */
+}
+
+.brand-story-image {
+    flex: 1 1 50%;
+    animation: fadeInLeft 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-story-image img {
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInRight {
+    from {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .brand-story-container {
+        flex-direction: column;
+    }
+
+    .brand-story-content,
+    .brand-story-image {
+        animation: fadeIn 1s ease-in-out; /* Simplified animation for mobile */
+    }
+
+    .brand-story-image img {
+        width: 100%;
+    }
+}
+/* General Footer Styling */
+.footer {
+    background-color: #121212; /* Black background */
+    color: #d9d9d9; /* Light gray text */
+    font-family: 'Arial', sans-serif;
+    padding: 40px 20px;
+    line-height: 1.8;
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .footer-column h4 {
+    font-size: 16px;
+    color:  #a38266; /* Golden headings */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .footer-column li:hover {
+    color:  #a38266; /* Golden hover effect */
+  }
+  
+  .footer-column a {
+    color: #d9d9d9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column a:hover {
+    color:  #a38266; /* Golden hover for links */
+  }
+  
+  .footer-contact p {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: brightness(0.8); /* Subtle effect for consistency */
+    transition: filter 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    filter: brightness(1.2); /* Highlight effect */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+  }
+  
+  

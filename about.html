@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="CEP.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Header Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #111;
+            border-bottom: 1px solid #444;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: #d4af37;
+            margin: 0;
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        .header-icons a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        /* About Us Section */
+        .about-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+        }
+
+        .about-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #d4af37;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1 1 40%;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #444;
+        }
+
+        .about-text {
+            flex: 1 1 55%;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .about-text button {
+            padding: 0.7rem 1.5rem;
+            background-color: #d4af37;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .about-text button:hover {
+            background-color: #b8962c;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #111;
+            border-top: 1px solid #444;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            color: #d4af37;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>CHRONOSWISS</h1>
+                <p>MODERN MECHANICAL</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="CEP.html">HOME</a></li>
+                    <li><a href="watch.html">WATCHES</a></li>
+                    <li><a href="feed.html">CUSTOMERS FEEDBACK</a></li>
+                    <li><a href="warranty.html">WARRANTY & SERVICE</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#"><span>👤</span></a>
+                <a href="#"><span>❤️</span></a>
+                <a href="cart.html"><span>🛒 0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-container">
+        <h1 class="about-title">About Us</h1>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="hero2b.jpg" alt="About Us">
+            </div>
+            <div class="about-text">
+                <h2>Our Legacy</h2>
+                <p>
+                    At Chronoswiss, we believe in crafting timeless masterpieces that redefine the essence of luxury and precision.
+                    Established with a passion for excellence, our brand has been at the forefront of modern mechanical innovation.
+                </p>
+                <p>
+                    Our team of expert artisans and horologists meticulously designs each watch, blending tradition with technology to offer a seamless experience.
+                    With every tick, we strive to preserve the art of watchmaking while embracing the future.
+                </p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Chronoswiss AG</p>
+    </footer>
+</body>
+</html>

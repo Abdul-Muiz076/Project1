@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watches Collection</title>
+    <link rel="stylesheet" href="CEP.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Header Section */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #111;
+            
+        }
+
+        .navbar .logo h1 {
+            color: #d4af37;
+            margin: 0;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar nav ul li {
+            margin: 0 1rem;
+        }
+
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-icons span {
+            color: #d4af37;
+        }
+
+        /* Heading Section */
+        .category-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 2rem 0;
+            color: #d4af37;
+        }
+
+        /* Watches Grid Section */
+        .watches-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .watch-card {
+            background-color: #111;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 400px;
+        }
+
+        .watch-card img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .watch-name {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            color: #fff;
+        }
+
+        .watch-price {
+            font-size: 1.1rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .watch-card button {
+            padding: 0.5rem 1.5rem;
+            background-color: #d4af37;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .watch-card button:hover {
+            background-color: #b8962c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .watches-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .watches-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .watches-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+    
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>CHRONOSWISS</h1>
+                <p>MODERN MECHANICAL</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="CEP.html">HOME</a></li>
+                    <li><a href="watch.html">WATCHES</a></li>
+                    <li><a href="feed.html">CUSTOMERS FEEDBACK</a></li>
+                    <li><a href="warranty.html">WARRANTY & SERVICE</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#"><span>👤</span></a>
+                <a href="#"><span>❤️</span></a>
+                <a href="cart.html"><span>🛒 <span id="cart-count">0</span></span></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Heading -->
+    <section class="category-heading">
+        <h1>Our Exclusive Watches Collection</h1>
+    </section>
+
+    <!-- Watches Grid -->
+    <section class="watches-container" id="watch-list">
+        <div class="watch-card" data-name="Space Timer Supernova" data-price="3500">
+            <img src="w1a.jpeg" alt="Space Timer Supernova">
+            <div class="watch-name">Space Timer Supernova</div>
+            <div class="watch-price">$3,500</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="watch-card" data-name="Moonphase Chronograph" data-price="4200">
+            <img src="w2b.jpeg" alt="Moonphase Chronograph">
+            <div class="watch-name">Moonphase Chronograph</div>
+            <div class="watch-price">$4,200</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="watch-card" data-name="Galactic Explorer" data-price="3000">
+            <img src="w3b.jpeg" alt="Galactic Explorer">
+            <div class="watch-name">Galactic Explorer</div>
+            <div class="watch-price">$3,000</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="watch-card" data-name="Solar Chronometer" data-price="2500">
+            <img src="w4a.jpeg" alt="Solar Chronometer">
+            <div class="watch-name">Solar Chronometer</div>
+            <div class="watch-price">$2,500</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="watch-card" data-name="Astro Navigator" data-price="2800">
+            <img src="waaap1.jpeg" alt="Astro Navigator">
+            <div class="watch-name">Astro Navigator</div>
+            <div class="watch-price">$2,800</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="watch-card" data-name="Deep Sea Diver" data-price="3700">
+            <img src="waap2.jpeg" alt="Deep Sea Diver">
+            <div class="watch-name">Deep Sea Diver</div>
+            <div class="watch-price">$3,700</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="watch-card" data-name="Lunar Mechanica" data-price="4500">
+            <img src="waap3.jpeg" alt="Lunar Mechanica">
+            <div class="watch-name">Lunar Mechanica</div>
+            <div class="watch-price">$4,500</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="watch-card" data-name="Vintage Elegance" data-price="2200">
+            <img src="waaap4.jpeg" alt="Vintage Elegance">
+            <div class="watch-name">Vintage Elegance</div>
+            <div class="watch-price">$2,200</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+
+    <script>
+       let cartCount = 0;
+let cart = JSON.parse(localStorage.getItem("cartItems")) || []; // Retrieve cart from localStorage or initialize an empty array
+
+// Update Cart Count in Header
+function updateCartCount() {
+    document.getElementById("cart-count").innerText = cart.length;
+}
+
+// Add Event Listeners to Buttons
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const card = e.target.closest('.watch-card');
+        const name = card.dataset.name;
+        const price = parseFloat(card.dataset.price);
+
+        // Add to Cart Array
+        cart.push({ name, price, quantity: 1 }); // Add default quantity as 1
+
+        // Show Alert
+        alert(`${name} Added to Cart!`);
+
+        // Update Cart Count
+        updateCartCount();
+
+        // Save to Local Storage
+        localStorage.setItem("cartItems", JSON.stringify(cart));
+    });
+});
+
+// Initialize Cart Count on Page Load
+updateCartCount();
+
+    </script>
+</body>
+</html>

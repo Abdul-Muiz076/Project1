@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers Feedback</title>
+    <link rel="stylesheet" href="CEP.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #111;
+            border-bottom: 1px solid #444;
+        }
+
+        .logo h1 {
+            color: #d4af37;
+            font-size: 1.8rem;
+        }
+
+        .logo p {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        .header-icons a {
+            margin-left: 1rem;
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        /* Section Heading */
+        .feedback-heading {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            color: #d4af37;
+        }
+
+        /* Customer Feedback Cards */
+        .feedback-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .feedback-card {
+            background-color: #111;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .customer-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+        }
+
+        .customer-review {
+            font-size: 1rem;
+            color: #fff;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .customer-rating {
+            color: #d4af37;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .feedback-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feedback-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 2rem;
+            text-align: center;
+            color: #fff;
+            border-top: 1px solid #444;
+        }
+
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>CHRONOSWISS</h1>
+            <p>MODERN MECHANICAL</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="CEP.html">HOME</a></li>
+                <li><a href="watch.html">WATCHES</a></li>
+                <li><a href="feed.html">CUSTOMERS FEEDBACK</a></li>
+                <li><a href="warranty.html">WARRANTY & SERVICE</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="#"><span>👤</span></a>
+            <a href="#"><span>❤️</span></a>
+            <a href="cart.html"><span>🛒 0</span></a>
+        </div>
+    </header>
+
+    <!-- Feedback Heading -->
+    <section class="feedback-heading">
+        <h1>What Our Customers Say</h1>
+    </section>
+
+    <!-- Feedback Grid -->
+    <section class="feedback-container">
+        <!-- Feedback 1 -->
+        <div class="feedback-card">
+            <div class="customer-name">John Smith</div>
+            <div class="customer-review">
+                "Absolutely in love with the quality and design of the watches. Customer service is excellent!"
+            </div>
+            <div class="customer-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+        <!-- Feedback 2 -->
+        <div class="feedback-card">
+            <div class="customer-name">Sarah Johnson</div>
+            <div class="customer-review">
+                "Elegant and timeless pieces. I bought two watches, and both exceeded my expectations."
+            </div>
+            <div class="customer-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+        <!-- Feedback 3 -->
+        <div class="feedback-card">
+            <div class="customer-name">Michael Williams</div>
+            <div class="customer-review">
+                "Excellent craftsmanship and attention to detail. Highly recommended!"
+            </div>
+            <div class="customer-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+        <!-- Feedback 4 -->
+        <div class="feedback-card">
+            <div class="customer-name">Emily Davis</div>
+            <div class="customer-review">
+                "Stunning watches! The golden edition is my favorite. A real head-turner."
+            </div>
+            <div class="customer-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+        <!-- Feedback 5 -->
+        <div class="feedback-card">
+            <div class="customer-name">David Brown</div>
+            <div class="customer-review">
+                "Great value for money. The quality matches luxury brands. I will definitely shop again."
+            </div>
+            <div class="customer-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+        <!-- Feedback 6 -->
+        <div class="feedback-card">
+            <div class="customer-name">Sophia Miller</div>
+            <div class="customer-review">
+                "The best purchase I've made in years! Quality, style, and durability all in one."
+            </div>
+            <div class="customer-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Chronoswiss AG | Designed by <a href="mailto:Muizsaleem701@gmail.com">Muiz Saleem</a></p>
+    </footer>
+</body>
+</html>

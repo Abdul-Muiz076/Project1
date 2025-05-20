@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script>
+       // Array to hold cart items
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+// Function to update the cart table
+function updateCartTable() {
+    const cartTableBody = document.getElementById("cart-table-body");
+    const subtotalElement = document.getElementById("subtotal");
+    let subtotal = 0;
+
+    cartTableBody.innerHTML = ""; // Clear previous items
+    cartItems.forEach((item, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>$${item.price}</td>
+            <td>
+                <input type="number" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input">
+            </td>
+            <td>
+                <button class="remove-btn" data-index="${index}">Remove</button>
+            </td>
+        `;
+
+        subtotal += item.price * item.quantity;
+        cartTableBody.appendChild(row);
+    });
+
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+}
+
+// Function to remove an item from the cart
+function removeItem(index) {
+    cartItems.splice(index, 1); // Remove the item
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    updateCartTable();
+}
+
+// Function to handle quantity change
+function updateQuantity(index, quantity) {
+    cartItems[index].quantity = parseInt(quantity, 10);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    updateCartTable();
+}
+
+// Function to handle place order
+function placeOrder() {
+    document.getElementById("order-form").style.display = "block";
+}
+
+// Function to confirm order
+function confirmOrder() {
+    alert("Order confirmed! Thank you for shopping.");
+    cartItems = [];
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    updateCartTable();
+    document.getElementById("order-form").style.display = "none";
+}
+
+// Add event listeners after DOM loads
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartTable();
+
+    // Delegate remove button clicks
+    document.getElementById("cart-table-body").addEventListener("click", (e) => {
+        if (e.target.classList.contains("remove-btn")) {
+            const index = e.target.getAttribute("data-index");
+            removeItem(index);
+        }
+    });
+
+    // Delegate quantity input changes
+    document.getElementById("cart-table-body").addEventListener("input", (e) => {
+        if (e.target.classList.contains("quantity-input")) {
+            const index = e.target.getAttribute("data-index");
+            const quantity = e.target.value;
+            updateQuantity(index, quantity);
+        }
+    });
+
+    // Handle place order button click
+    document.getElementById("place-order-btn").addEventListener("click", placeOrder);
+
+    // Handle confirm order button click
+    document.getElementById("confirm-order-btn").addEventListener("click", confirmOrder);
+});
+
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #111;
+            color: #d4af37;
+        }
+
+        header .logo h1 {
+            margin: 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .cart-section {
+            padding: 2rem;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #444;
+        }
+
+        .cart-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #place-order-btn {
+            padding: 0.5rem 1rem;
+            background-color: #d4af37;
+            border: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+        #order-form {
+            padding: 2rem;
+            background-color: #111;
+            display: none;
+        }
+
+        #order-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #order-form form input, #order-form form textarea {
+            padding: 0.5rem;
+            background-color: #222;
+            border: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>CHRONOSWISS</h1>
+                <p>MODERN MECHANICAL</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="CEP.html">HOME</a></li>
+                    <li><a href="watch.html">WATCHES</a></li>
+                    <li><a href="feed.html">CUSTOMERS FEEDBACK</a></li>
+                    <li><a href="warranty.html">WARRANTY & SERVICE</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <h1>Your Shopping Cart</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="cart-table-body">
+                <!-- Cart Items will be populated dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Subtotal Section -->
+        <div class="cart-summary">
+            <p>Subtotal: <span id="subtotal">$0.00</span></p>
+            <button id="place-order-btn">Place Order</button>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order-form">
+        <h2>Order Information</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            <button type="button" id="confirm-order-btn">Confirm Order</button>
+        </form>
+    </section>
+</body>
+</html>
